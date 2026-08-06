@@ -37,7 +37,20 @@ document.querySelectorAll('nav a').forEach(link => {
             });
         }
     });
-});
+});// Hero Slider
+const slides = document.querySelectorAll(".slide");
+
+let current = 0;
+
+setInterval(() => {
+
+slides[current].classList.remove("active");
+
+current = (current + 1) % slides.length;
+
+slides[current].classList.add("active");
+
+},3000);
 
 // Back to Top Button
 const topBtn = document.createElement("button");
