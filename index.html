@@ -5,67 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/919919900020" class="whatsapp" target="_blank">
-    💬
-</a>
- font-family: Arial;
- margin:0;
- background:#f5f9ff;
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f5f9ff;
 }
 
 header{
- background:#0b7dda;
- color:white;
- padding:20px;
- text-align:center;
+    background:#0b7dda;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
 
 nav{
- background:white;
- padding:10px;
- text-align:center;
+    background:white;
+    padding:15px;
+    text-align:center;
 }
 
 nav a{
- margin:10px;
- text-decoration:none;
- color:#0b7dda;
+    margin:15px;
+    text-decoration:none;
+    color:#0b7dda;
+    font-size:20px;
+    font-weight:bold;
 }
 
 .hero{
- padding:50px;
- text-align:center;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h2{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:24px;
 }
 
 button{
- background:#0b7dda;
- color:white;
- padding:12px 25px;
- border:none;
- border-radius:5px;
+    background:#0b7dda;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    font-size:20px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
 .services{
- display:flex;
- gap:20px;
- padding:20px;
- justify-content:center;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
 }
 
 .card{
- background:white;
- padding:20px;
- border-radius:10px;
- width:250px;
- box-shadow:0 0 10px #ccc;
+    background:white;
+    width:260px;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.card h3{
+    color:#0b7dda;
 }
 
 footer{
- background:#222;
- color:white;
- text-align:center;
- padding:15px;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
+
+/* WhatsApp Button */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 </style>
 
@@ -74,47 +107,29 @@ footer{
 <body>
 
 <header>
-<h1>Care Plus Clinic</h1>
-<p>Quality Healthcare With Compassion</p>
+    <h1>Care Plus Clinic</h1>
+    <p>Quality Healthcare With Compassion</p>
 </header>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Doctors</a>
-<a href="#">Contact</a>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Doctors</a>
+    <a href="#">Contact</a>
 </nav>
 
 <section class="hero">
-<h2>Your Health Is Our Priority</h2>
-<p>Book appointment with experienced doctors.</p>
-<button>Book Appointment</button>
+    <h2>Your Health Is Our Priority</h2>
+    <p>Book appointment with experienced doctors.</p>
+    <button>Book Appointment</button>
 </section>
-
 
 <section class="services">
 
 <div class="card">
-<h3>General Checkup</h3>
-<p>Complete health consultation.</p>
+    <h3>General Checkup</h3>
+    <p>Complete health consultation.</p>
 </div>
 
 <div class="card">
-<h3>Child Care</h3>
-<p>Special care for children.</p>
-</div>
-
-<div class="card">
-<h3>Online Consultation</h3>
-<p>Consult doctors from home.</p>
-</div>
-
-</section>
-
-
-<footer>
-<p>© 2026 Care Plus Clinic | Contact: +91 XXXXX XXXXX</p>
-</footer>
-
-</body>
-</html>
+    <h3>Child Care
