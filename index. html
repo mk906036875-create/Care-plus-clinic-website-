@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Plus Clinic | Healthcare</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+
+    <div class="logo">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <span>Care Plus Clinic</span>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#appointment">Appointment</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- Hero Section -->
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h1>Your Health Is Our Priority</h1>
+
+<p>
+Providing trusted healthcare with experienced doctors,
+modern facilities and compassionate care.
+</p>
+
+<a href="#appointment" class="btn">
+Book Appointment
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=900"
+alt="Doctor">
+
+</div>
+
+</section>
+
+<!-- Services -->
+
+<section class="services" id="services">
+
+<h2>Our Services</h2>
+
+<div class="service-box">
+
+<div class="card">
+<i class="fa-solid fa-stethoscope"></i>
+<h3>General Checkup</h3>
+<p>Complete health consultation.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-baby"></i>
+<h3>Child Care</h3>
+<p>Special healthcare for children.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-heart"></i>
+<h3>Cardiology</h3>
+<p>Heart specialist consultation.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-tooth"></i>
+<h3>Dental Care</h3>
+<p>Advanced dental treatment.</p>
+</div>
+
+</div>
+
+</section>
