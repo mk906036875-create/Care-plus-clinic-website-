@@ -1,485 +1,187 @@
-/* Care Plus Clinic Premium Design */
-
-*{
+ *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, sans-serif;
 }
-
 
 body{
-    background:#f5f9ff;
+    font-family:Arial, sans-serif;
+    background:#f5faff;
     color:#333;
 }
-/* Scroll Animation */
-.hidden{
-    opacity:0;
-    transform:translateY(40px);
-    transition:all .8s ease;
-}
-
-.show{
-    opacity:1;
-    transform:translateY(0);
-}
-.hero{
-    position:relative;
-    overflow:hidden;
-    padding:0;
-    height:500px;
-    border-radius:15px;
-}
-
-.slider{
-    width:100%;
-    height:100%;
-    position:relative;
-}
-
-.slide{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    opacity:0;
-    transition:opacity 1s ease;
-}
-
-.slide.active{
-    opacity:1;
-}
-
-.hero-content{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    color:#fff;
-    text-align:center;
-    background:rgba(0,0,0,.45);
-    padding:30px;
-    border-radius:15px;
-}
-
-.hero-content h2{
-    font-size:42px;
-}
-
-.hero-content p{
-    margin:15px 0;
-    font-size:20px;
-}
-/* Back to Top Button */
-#topBtn{
-    background:#0077b6;
-    color:white;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
-}
-
-#topBtn:hover{
-    background:#00b4d8;
-}
-
-/* Header */
 
 header{
-    background:linear-gradient(135deg,#0077cc,#00b4d8);
-    color:white;
-    text-align:center;
-    padding:30px 20px;
-}
-
-
-header img{
-    border-radius:50%;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:20px;
     background:white;
-    padding:5px;
-}
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f4f9ff;
-    color:#333;
-    line-height:1.6;
-}
-
-/* Header */
-header{
-    background:linear-gradient(135deg,#0077b6,#00b4d8);
-    color:#fff;
-    text-align:center;
-    padding:40px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
 
 header img{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    background:#fff;
-    padding:8px;
-    margin-bottom:15px;
+    width:90px;
 }
 
 header h1{
-    font-size:40px;
+    color:#0077b6;
+    font-size:32px;
 }
 
 header p{
-    margin-top:10px;
-    font-size:18px;
+    color:#555;
 }
 
-/* Navigation */
+
 nav{
-    position:sticky;
-    top:0;
-    background:#fff;
-    display:flex;
-    justify-content:center;
-    gap:30px;
+    background:#0077b6;
     padding:15px;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
-    z-index:1000;
+    text-align:center;
 }
 
 nav a{
+    color:white;
     text-decoration:none;
-    color:#0077b6;
-    font-weight:600;
-    transition:.3s;
+    margin:15px;
+    font-weight:bold;
 }
 
-nav a:hover{
-    color:#00b4d8;
-}
 
-/* Sections */
-section{
-    max-width:1100px;
-    margin:40px auto;
-    padding:30px;
-    background:#fff;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
+.hero{
+    height:450px;
+    background:
+    linear-gradient(rgba(0,119,182,.6),rgba(0,119,182,.6)),
+    url("images/clinic.jpg");
 
-section h2{
-    color:#0077b6;
-    margin-bottom:20px;
-}
+    background-size:cover;
+    background-position:center;
 
-/* Buttons */
-button,.btn{
-    display:inline-block;
-    background:#0077b6;
-    color:#fff;
-    padding:12px 24px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    text-decoration:none;
-    transition:.3s;
-}
-
-button:hover,.btn:hover{
-    background:#00b4d8;
-    transform:translateY(-3px);
-}
-
-/* Services */
-ul{
-    list-style:none;
-}
-
-ul li{
-    background:#eef8ff;
-    margin:10px 0;
-    padding:12px;
-    border-left:5px solid #0077b6;
-    border-radius:8px;
-}
-
-/* Doctor Card */
-.doctor-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    max-width:320px;
+    color:white;
+}
+
+
+.hero h2{
+    font-size:45px;
+}
+
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 30px;
+    background:#00b4d8;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+}
+
+
+section{
+    padding:50px 20px;
+    text-align:center;
+}
+
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+
+.card{
+    background:white;
+    width:250px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+
+.doctor-card{
+    background:white;
+    max-width:300px;
     margin:auto;
     padding:25px;
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
+
 .doctor-card img{
     width:150px;
-    height:150px;
     border-radius:50%;
-    object-fit:cover;
-    margin-bottom:15px;
 }
 
-/* Form */
+
 form{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-input,
-select,
-textarea{
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:16px;
-}
-
-textarea{
-    resize:vertical;
-    min-height:120px;
-}
-
-/* Footer */
-footer{
-    background:#003049;
-    color:#fff;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
-}
-
-/* WhatsApp Button */
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:60px;
-    height:60px;
-    background:#25D366;
-    color:#fff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    text-decoration:none;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
-}
-
-/* Responsive */
-@media(max-width:768px){
-
-header h1{
-    font-size:28px;
-}
-
-nav{
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-section{
-    margin:20px;
-    padding:20px;
-}
-
-                         }
-
-header h1{
-    font-size:38px;
-    margin:10px;
+    max-width:500px;
+    margin:auto;
 }
 
 
-header p{
-    font-size:18px;
-}
+input,select,textarea,button{
 
-
-
-/* Navigation */
-
-nav{
-    background:white;
+    width:100%;
     padding:15px;
-    text-align:center;
-    box-shadow:0 2px 10px #ccc;
-}
-
-
-nav a{
-    text-decoration:none;
-    color:#0077cc;
-    font-weight:bold;
-    margin:15px;
-}
-
-
-nav a:hover{
-    color:#00b4d8;
-}
-
-
-
-/* Sections */
-
-section{
-
-    padding:40px 20px;
-    max-width:1000px;
-    margin:auto;
-
-}
-
-
-section h2{
-
-    text-align:center;
-    color:#0077cc;
-    margin-bottom:20px;
-    font-size:30px;
-
-}
-
-
-section p{
-
-    text-align:center;
-    line-height:1.7;
-    font-size:17px;
-
-}
-
-
-
-/* Services */
-
-ul{
-
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-    list-style:none;
-
-}
-
-
-ul li{
-
-    background:white;
-    padding:20px;
-    text-align:center;
-    border-radius:10px;
-    box-shadow:0 5px 15px #ddd;
-    color:#0077cc;
-    font-weight:bold;
-
-}
-
-
-
-/* Doctor Profile */
-
-.doctor-card{
-
-    background:white;
-    max-width:350px;
-    margin:auto;
-    text-align:center;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px #ccc;
-
-}
-
-
-.doctor-card img{
-
-    border-radius:50%;
-    border:5px solid #00b4d8;
-
-}
-
-
-.doctor-card h3{
-
-    color:#0077cc;
-    margin:15px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
 
 }
 
 
 button{
-
-    background:#0077cc;
+    background:#0077b6;
     color:white;
     border:none;
-    padding:12px 25px;
-    border-radius:25px;
     cursor:pointer;
-    margin-top:15px;
-
 }
 
 
-button:hover{
+.whatsapp{
 
-    background:#00b4d8;
-
-}
-
-
-
-/* Contact */
-
-#contact{
-
-    background:white;
-    border-radius:15px;
-    margin-bottom:30px;
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25D366;
+    color:white;
+    padding:15px 20px;
+    border-radius:50px;
+    text-decoration:none;
 
 }
 
-
-
-/* Footer */
 
 footer{
 
-    background:#0077cc;
+    background:#0077b6;
     color:white;
-    text-align:center;
     padding:20px;
+    text-align:center;
 
 }
 
-
-
-/* Mobile Responsive */
 
 @media(max-width:600px){
 
-header h1{
-
-    font-size:28px;
-
+header{
+    flex-direction:column;
+    text-align:center;
 }
 
-
 nav a{
-
     display:block;
     margin:10px;
+}
 
+.hero h2{
+    font-size:30px;
 }
 
 }
