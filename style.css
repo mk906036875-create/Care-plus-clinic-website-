@@ -12,7 +12,28 @@ body{
     background:#f5f9ff;
     color:#333;
 }
+/* Scroll Animation */
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
 
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Back to Top Button */
+#topBtn{
+    background:#0077b6;
+    color:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+#topBtn:hover{
+    background:#00b4d8;
+}
 
 /* Header */
 
