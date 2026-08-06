@@ -1,26 +1,4 @@
-<section id="home" class="hero">
-
-<div class="slider">
-
-<img class="slide active" src="images/slide1.jpg" alt="Clinic">
-
-<img class="slide" src="images/slide2.jpg" alt="Doctor">
-
-<img class="slide" src="images/slide3.jpg" alt="Hospital">
-
-</div>
-
-<div class="hero-content">
-
-<h2>Welcome to Care Plus Clinic</h2>
-
-<p>Your Health, Our Priority</p>
-
-<a href="#appointment" class="btn">Book Appointment</a>
-
-</div>
-
-</section><!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,85 +11,52 @@
 
 </head>
 
-<body><script type="module" src="firebase-config.js"></script>
+<body>
 
 <header>
-
-<img src="images/logo.png" alt="Care Plus Clinic Logo" width="100">
-
-<h1>Care Plus Clinic</h1>
-
-<p>Your Health, Our Priority</p>
-
+    <img src="images/logo.png" alt="Care Plus Clinic Logo">
+    <div>
+        <h1>Care Plus Clinic</h1>
+        <p>Your Health, Our Priority</p>
+    </div>
 </header>
 
 
 <nav>
-
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#doctors">Doctors</a>
-<a href="#contact">Contact</a>
-
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#appointment">Appointment</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 
-<section id="home"><section id="map"><section id="location">
+<section id="home" class="hero">
 
-<h2>Our Location</h2>
-
-<iframe
-src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAP_EMBED_LINK"
-width="100%"
-height="350"
-style="border:0;"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
-</section>
-
-<h2>Find Us</h2>
-
-<iframe
-src="https://www.google.com/maps/embed?pb=YOUR_MAP_LINK"
-width="100%"
-height="350"
-style="border:0;"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
-</section>
-
-<h2>Welcome to Care Plus Clinic</h2>
-
-<p>
-We provide quality healthcare services with experienced doctors and modern facilities.
-</p>
-
-<button>Book Appointment</button>
-
-</section>
-
-
-
-<section id="about"><section id="home" class="hero">
+<div class="hero-overlay">
 
 <h2>Welcome to Care Plus Clinic</h2>
 
 <p>Your Trusted Healthcare Partner</p>
 
-<a href="#appointment" class="btn">Book Appointment</a>
+<a href="#appointment" class="btn">
+Book Appointment
+</a>
+
+</div>
 
 </section>
+
+
+
+<section id="about">
 
 <h2>About Us</h2>
 
 <p>
-Care Plus Clinic is committed to providing affordable and quality healthcare 
-services for every patient. Our goal is better health and better care.
+Care Plus Clinic provides quality healthcare services with experienced doctors,
+modern facilities and patient-focused care.
 </p>
 
 </section>
@@ -122,21 +67,32 @@ services for every patient. Our goal is better health and better care.
 
 <h2>Our Services</h2>
 
-<ul>
+<div class="cards">
 
-<li>General Physician</li>
+<div class="card">
+<h3>General Physician</h3>
+<p>Complete health consultation.</p>
+</div>
 
-<li>Child Specialist</li>
 
-<li>Women's Health</li>
+<div class="card">
+<h3>Child Specialist</h3>
+<p>Expert care for children.</p>
+</div>
 
-<li>Blood Test</li>
 
-<li>Emergency Care</li>
+<div class="card">
+<h3>Blood Test</h3>
+<p>Modern diagnostic services.</p>
+</div>
 
-<li>Health Checkup</li>
 
-</ul>
+<div class="card">
+<h3>Emergency Care</h3>
+<p>Quick medical support.</p>
+</div>
+
+</div>
 
 </section>
 
@@ -144,50 +100,23 @@ services for every patient. Our goal is better health and better care.
 
 <section id="doctors">
 
-<h2>Our Doctors</h2>
-
+<h2>Our Doctor</h2>
 
 <div class="doctor-card">
 
-
-<img src="images/doctor.png" alt="Doctor Profile" width="150">
-
+<img src="images/doctor.png" alt="Doctor">
 
 <h3>Dr. Rahul Sharma</h3>
 
-
 <p>
-MBBS, MD (Medicine)<br>
-10+ Years Experience<br>
-Specialist in General Medicine
+MBBS, MD Medicine<br>
+10+ Years Experience
 </p>
-
-
-<button>Book Appointment</button>
-
 
 </div>
 
-
 </section>
 
-
-
-
-<section id="contact">
-
-
-<h2>Contact Us</h2>
-
-
-<p>📍 Address: Your Clinic Address</p>
-
-<p>📞 Phone: +91 9876543210</p>
-
-<p>✉ Email: careplusclinic@gmail.com</p>
-
-
-</section>
 
 
 
@@ -197,7 +126,7 @@ Specialist in General Medicine
 
 <form>
 
-<input type="text" placeholder="Full Name" required>
+<input type="text" placeholder="Patient Name" required>
 
 <input type="tel" placeholder="Mobile Number" required>
 
@@ -205,35 +134,59 @@ Specialist in General Medicine
 
 <input type="date" required>
 
-<select required>
+
+<select>
 <option>Select Department</option>
 <option>General Physician</option>
 <option>Child Specialist</option>
 <option>Women's Health</option>
 </select>
 
-<textarea placeholder="Your Problem"></textarea>
 
-<button type="submit">Submit</button>
+<textarea placeholder="Patient Problem"></textarea>
+
+
+<button>
+Submit Appointment
+</button>
 
 </form>
 
-  </section>
+</section>
+
+
+
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<p>📍 Your Clinic Address</p>
+
+<p>📞 +91 9876543210</p>
+
+<p>✉ careplusclinic@gmail.com</p>
+
+
+</section>
+
+
+
+<a class="whatsapp" 
+href="https://wa.me/919876543210">
+WhatsApp
+</a>
+
+
+
 <footer>
 
-
 <p>
-© 2026 Care Plus Clinic. All Rights Reserved.
+© 2026 Care Plus Clinic | All Rights Reserved
 </p>
-
 
 </footer>
 
 
-
-<script src="script.js"></script>
-
-
 </body>
-
 </html>
