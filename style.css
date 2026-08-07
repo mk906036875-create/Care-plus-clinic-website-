@@ -251,4 +251,39 @@ nav a{
 
 .gallery img:hover{
     transform:scale(1.05);
+    }/* Premium Gallery */
+
+#gallery{
+    padding:80px 20px;
+    background:#f8fbff;
+    text-align:center;
+}
+
+#gallery h2{
+    font-size:36px;
+    color:#0b4f9c;
+    margin-bottom:15px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:40px auto 0;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:0.4s ease;
+    cursor:pointer;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
     }
