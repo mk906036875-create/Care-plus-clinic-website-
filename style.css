@@ -184,4 +184,45 @@ nav a{
     font-size:30px;
 }
 
+}/* Patient Reviews */
+
+#reviews{
+    padding:70px 20px;
+    background:#f8fbff;
+    text-align:center;
+}
+
+.review-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.review-card{
+    width:300px;
+    background:#ffffff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    transition:0.3s;
+}
+
+.review-card:hover{
+    transform:translateY(-10px);
+}
+
+.review-card h3{
+    color:#ffb400;
+    font-size:24px;
+}
+
+.review-card p{
+    margin:15px 0;
+    color:#555;
+    line-height:1.6;
+}
+
+.review-card h4{
+    color:#0077cc;
 }
