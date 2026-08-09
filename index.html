@@ -1,98 +1,427 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Care Plus Clinic</title>
+<title>Care Plus Clinic | AI Healthcare Demo</title>
 
-<link rel="stylesheet" href="style.css">
+<meta name="description"
+content="Care Plus Clinic - Healthcare website with appointment booking, patient enquiry and AI assistant demo.">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial, sans-serif;
+line-height:1.6;
+background:#f5f9fc;
+color:#222;
+}
+
+header{
+background:#0b7fab;
+color:white;
+padding:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+}
+
+header img{
+width:70px;
+height:70px;
+object-fit:contain;
+border-radius:50%;
+background:white;
+}
+
+header h1{
+font-size:30px;
+}
+
+nav{
+background:#075f80;
+padding:12px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
+}
+
+.hero{
+min-height:420px;
+background:linear-gradient(rgba(0,80,110,.65),rgba(0,80,110,.65)),
+url("images/gallery1.jpg") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:30px;
+}
+
+.hero h2{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+background:#00a86b;
+color:white;
+padding:14px 25px;
+border-radius:7px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+padding:55px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+section h2{
+text-align:center;
+color:#075f80;
+margin-bottom:25px;
+font-size:30px;
+}
+
+#about p{
+max-width:800px;
+margin:auto;
+text-align:center;
+font-size:18px;
+}
+
+.cards,
+.doctors,
+.gallery,
+.review-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card,
+.doctor-card,
+.review-card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.card h3,
+.doctor-card h3{
+color:#075f80;
+margin-bottom:10px;
+}
+
+.doctor-card img{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:12px;
+}
+
+.review-card h3{
+margin-bottom:10px;
+}
+
+.review-card h4{
+margin-top:15px;
+color:#075f80;
+}
+
+form{
+max-width:600px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:13px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:7px;
+font-size:16px;
+}
+
+textarea{
+height:110px;
+resize:vertical;
+}
+
+form button{
+width:100%;
+padding:14px;
+border:0;
+border-radius:7px;
+background:#0b7fab;
+color:white;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+form button:hover{
+background:#075f80;
+}
+
+#confirmation{
+display:none;
+max-width:600px;
+margin:20px auto;
+padding:20px;
+background:#e8fff4;
+border:1px solid #00a86b;
+border-radius:10px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#25d366;
+color:white;
+padding:13px 18px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+z-index:999;
+}
+
+#contact{
+text-align:center;
+}
+
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+}
+
+footer{
+background:#075f80;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+/* AI ASSISTANT */
+
+.ai-button{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+border:none;
+background:#0b7fab;
+color:white;
+font-size:25px;
+cursor:pointer;
+z-index:2000;
+box-shadow:0 4px 15px rgba(0,0,0,.25);
+}
+
+.chatbox{
+display:none;
+position:fixed;
+right:20px;
+bottom:90px;
+width:330px;
+max-width:calc(100% - 40px);
+background:white;
+border-radius:15px;
+box-shadow:0 5px 25px rgba(0,0,0,.25);
+overflow:hidden;
+z-index:1999;
+}
+
+.chat-header{
+background:#0b7fab;
+color:white;
+padding:15px;
+font-weight:bold;
+}
+
+.chat-messages{
+height:300px;
+overflow-y:auto;
+padding:15px;
+background:#f5f9fc;
+}
+
+.message{
+padding:10px 12px;
+margin-bottom:10px;
+border-radius:10px;
+max-width:90%;
+font-size:14px;
+}
+
+.bot{
+background:white;
+border:1px solid #ddd;
+}
+
+.user{
+background:#0b7fab;
+color:white;
+margin-left:auto;
+}
+
+.chat-input{
+display:flex;
+border-top:1px solid #ddd;
+}
+
+.chat-input input{
+margin:0;
+border:0;
+border-radius:0;
+}
+
+.chat-input button{
+width:65px;
+border:0;
+background:#0b7fab;
+color:white;
+cursor:pointer;
+}
+
+.quick-buttons{
+padding:10px;
+display:flex;
+gap:5px;
+flex-wrap:wrap;
+}
+
+.quick-buttons button{
+border:1px solid #0b7fab;
+background:white;
+color:#075f80;
+padding:6px 9px;
+border-radius:15px;
+cursor:pointer;
+font-size:12px;
+}
+
+@media(max-width:600px){
+
+header{
+flex-direction:column;
+text-align:center;
+}
+
+header h1{
+font-size:25px;
+}
+
+nav{
+overflow-x:auto;
+white-space:nowrap;
+}
+
+nav a{
+font-size:13px;
+margin:0 6px;
+}
+
+.hero h2{
+font-size:30px;
+}
+
+section{
+padding:40px 15px;
+}
+
+.chatbox{
+right:10px;
+bottom:85px;
+width:calc(100% - 20px);
+}
+
+.whatsapp{
+left:15px;
+bottom:15px;
+}
+
+}
+
+</style>
 
 </head>
 
-<body><section id="doctors">
-    <div class="container">
-        <h2>Meet Our Doctors</h2>
+<body>
 
-        <div class="doctor-card">
-            <img src="images/doctor1.jpg" alt="Doctor">
-            <h3>Dr. Rajesh Kumar</h3>
-            <p>MBBS, MD (General Physician)</p>
-            <p>15+ Years Experience</p>
-        </div>
-
-        <div class="doctor-card">
-            <img src="images/doctor2.jpg" alt="Doctor">
-            <h3>Dr. Priya Sharma</h3>
-            <p>MBBS, DGO (Gynecologist)</p>
-            <p>12+ Years Experience</p>
-        </div>
-
-        <div class="doctor-card">
-            <img src="images/doctor3.jpg" alt="Doctor">
-            <h3>Dr. Amit Verma</h3>
-            <p>MBBS, DCH (Child Specialist)</p>
-            <p>10+ Years Experience</p>
-        </div>
-    </div>
-</section><section id="reviews">
-
-    <h2>Patient Reviews</h2>
-
-    <div class="review-container">
-
-        <div class="review-card">
-            <h3>⭐⭐⭐⭐⭐</h3>
-            <p>
-                "Excellent treatment and very caring doctors.
-                Highly recommended!"
-            </p>
-            <h4>- Amit Kumar</h4>
-        </div>
-
-        <div class="review-card">
-            <h3>⭐⭐⭐⭐⭐</h3>
-            <p>
-                "Clean clinic, friendly staff and quick service."
-            </p>
-            <h4>- Priya Singh</h4>
-        </div>
-
-        <div class="review-card">
-            <h3>⭐⭐⭐⭐⭐</h3>
-            <p>
-                "Best healthcare experience for my family."
-            </p>
-            <h4>- Rahul Verma</h4>
-        </div>
-
-    </div>
-
-</section>
 
 <header>
-    <img src="images/logo.png" alt="Care Plus Clinic Logo">
-    <div>
-        <h1>Care Plus Clinic</h1>
-        <p>Your Health, Our Priority</p>
-    </div>
+
+<img src="images/logo.png" alt="Care Plus Clinic Logo">
+
+<div>
+<h1>Care Plus Clinic</h1>
+<p>Your Health, Our Priority</p>
+</div>
+
 </header>
 
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#doctors">Doctors</a>
-    <a href="#appointment">Appointment</a>
-    <a href="#contact">Contact</a>
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#doctors">Doctors</a>
+<a href="#appointment">Appointment</a>
+<a href="#contact">Contact</a>
+
 </nav>
 
 
 <section id="home" class="hero">
 
-<div class="hero-overlay">
+<div>
 
 <h2>Welcome to Care Plus Clinic</h2>
 
@@ -107,18 +436,16 @@ Book Appointment
 </section>
 
 
-
 <section id="about">
 
 <h2>About Us</h2>
 
 <p>
-Care Plus Clinic provides quality healthcare services with experienced doctors,
-modern facilities and patient-focused care.
+Care Plus Clinic provides quality healthcare services with experienced
+doctors, modern facilities and patient-focused care.
 </p>
 
 </section>
-
 
 
 <section id="services">
@@ -132,18 +459,15 @@ modern facilities and patient-focused care.
 <p>Complete health consultation.</p>
 </div>
 
-
 <div class="card">
 <h3>Child Specialist</h3>
 <p>Expert care for children.</p>
 </div>
 
-
 <div class="card">
 <h3>Blood Test</h3>
 <p>Modern diagnostic services.</p>
 </div>
-
 
 <div class="card">
 <h3>Emergency Care</h3>
@@ -155,109 +479,538 @@ modern facilities and patient-focused care.
 </section>
 
 
-
 <section id="doctors">
 
-<h2>Our Doctor</h2>
+<h2>Meet Our Doctors</h2>
+
+<div class="doctors">
 
 <div class="doctor-card">
 
-<img src="images/doctor.png" alt="Doctor">
+<img src="images/doctor1.jpg" alt="Doctor">
 
-<h3>Dr. Rahul Sharma</h3>
+<h3>Dr. Rajesh Kumar</h3>
 
-<p>
-MBBS, MD Medicine<br>
-10+ Years Experience
-</p>
+<p>MBBS, MD (General Physician)</p>
+<p>15+ Years Experience</p>
+
+</div>
+
+
+<div class="doctor-card">
+
+<img src="images/doctor2.jpg" alt="Doctor">
+
+<h3>Dr. Priya Sharma</h3>
+
+<p>MBBS, DGO (Gynecologist)</p>
+<p>12+ Years Experience</p>
+
+</div>
+
+
+<div class="doctor-card">
+
+<img src="images/doctor3.jpg" alt="Doctor">
+
+<h3>Dr. Amit Verma</h3>
+
+<p>MBBS, DCH (Child Specialist)</p>
+<p>10+ Years Experience</p>
+
+</div>
 
 </div>
 
 </section>
 
 
+<section id="reviews">
+
+<h2>Patient Reviews</h2>
+
+<div class="review-container">
+
+<div class="review-card">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"Excellent treatment and very caring doctors.
+Highly recommended!"
+</p>
+
+<h4>- Amit Kumar</h4>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"Clean clinic, friendly staff and quick service."
+</p>
+
+<h4>- Priya Singh</h4>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+"Best healthcare experience for my family."
+</p>
+
+<h4>- Rahul Verma</h4>
+
+</div>
+
+</div>
+
+</section>
 
 
 <section id="appointment">
 
 <h2>Book Appointment</h2>
 
-<form>
+<form id="appointmentForm">
 
-<input type="text" placeholder="Patient Name" required>
+<input
+type="text"
+id="patientName"
+placeholder="Patient Name"
+required
+>
 
-<input type="tel" placeholder="Mobile Number" required>
+<input
+type="tel"
+id="mobile"
+placeholder="Mobile Number"
+required
+>
 
-<input type="email" placeholder="Email">
+<input
+type="email"
+id="email"
+placeholder="Email"
+>
 
-<input type="date" required>
+<input
+type="date"
+id="date"
+required
+>
 
+<select id="department" required>
 
-<select>
-<option>Select Department</option>
+<option value="">Select Department</option>
+
 <option>General Physician</option>
 <option>Child Specialist</option>
 <option>Women's Health</option>
+
 </select>
 
+<textarea
+id="problem"
+placeholder="Patient Problem">
+</textarea>
 
-<textarea placeholder="Patient Problem"></textarea>
-
-
-<button>
+<button type="submit">
 Submit Appointment
 </button>
 
 </form>
 
+
+<div id="confirmation">
+
+<h3>✅ Appointment Request Received</h3>
+
+<p>
+Thank you! Your appointment request has been recorded in this demo.
+</p>
+
+<p>
+Our clinic team can contact you for confirmation.
+</p>
+
+<br>
+
+<a
+id="appointmentWhatsApp"
+class="btn"
+href="#"
+target="_blank">
+Send Appointment on WhatsApp
+</a>
+
+</div>
+
 </section>
 
 
+<section id="gallery">
+
+<h2>Clinic Gallery</h2>
+
+<div class="gallery">
+
+<img src="images/gallery1.jpg" alt="Clinic">
+
+<img src="images/gallery2.jpg" alt="Reception">
+
+<img src="images/gallery3.jpg" alt="Doctor">
+
+<img src="images/gallery4.jpg" alt="Treatment">
+
+<img src="images/gallery5.jpg" alt="Patient Care">
+
+<img src="images/gallery6.jpg" alt="Medical Equipment">
+
+</div>
+
+</section>
 
 
 <section id="contact">
-<section id="gallery">
-    <h2>Clinic Gallery</h2>
 
-    <div class="gallery">
-
-        <img src="images/gallery1.jpg" alt="Clinic">
-        <img src="images/gallery2.jpg" alt="Reception">
-        <img src="images/gallery3.jpg" alt="Doctor">
-        <img src="images/gallery4.jpg" alt="Treatment">
-        <img src="images/gallery5.jpg" alt="Patient Care">
-        <img src="images/gallery6.jpg" alt="Medical Equipment">
-
-    </div>
-</section>
 <h2>Contact Us</h2>
 
-<p>📍 Your Clinic Address</p>
+<p>📍 Care Plus Clinic</p>
 
-<p>📞 +91 xxxxxxxxx</p>
+<p>📞 +91 9999999999</p>
 
 <p>✉ careplusclinic@gmail.com</p>
 
-
 </section>
 
 
-
-<a class="whatsapp" 
-href="https://wa.me/9xxxxxxxx">
+<a
+class="whatsapp"
+href="https://wa.me/919999999999"
+target="_blank">
 WhatsApp
 </a>
 
+
+<!-- AI ASSISTANT -->
+
+<button
+class="ai-button"
+onclick="toggleChat()"
+aria-label="Open AI Assistant">
+🤖
+</button>
+
+
+<div class="chatbox" id="chatbox">
+
+<div class="chat-header">
+Care Plus AI Assistant
+</div>
+
+
+<div class="chat-messages" id="chatMessages">
+
+<div class="message bot">
+
+Hello! 👋 I'm the Care Plus Clinic Assistant.
+
+How can I help you?
+
+</div>
+
+</div>
+
+
+<div class="quick-buttons">
+
+<button onclick="quickMessage('What services do you provide?')">
+Services
+</button>
+
+<button onclick="quickMessage('How can I book an appointment?')">
+Appointment
+</button>
+
+<button onclick="quickMessage('How can I contact the clinic?')">
+Contact
+</button>
+
+</div>
+
+
+<div class="chat-input">
+
+<input
+type="text"
+id="chatInput"
+placeholder="Ask something..."
+onkeydown="if(event.key==='Enter') sendMessage()"
+>
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+</div>
+
+</div>
 
 
 <footer>
 
 <p>
-© 2026 Care Plus Clinic | All Rights Reserved
+© 2026 Care Plus Clinic | AI Healthcare Demo
 </p>
 
 </footer>
 
 
+<script>
+
+/* APPOINTMENT DEMO */
+
+document
+.getElementById("appointmentForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const name =
+document.getElementById("patientName").value;
+
+const mobile =
+document.getElementById("mobile").value;
+
+const email =
+document.getElementById("email").value;
+
+const date =
+document.getElementById("date").value;
+
+const department =
+document.getElementById("department").value;
+
+const problem =
+document.getElementById("problem").value;
+
+
+/* Save demo lead in browser */
+
+const appointment = {
+
+name:name,
+mobile:mobile,
+email:email,
+date:date,
+department:department,
+problem:problem,
+createdAt:new Date().toLocaleString()
+
+};
+
+localStorage.setItem(
+"carePlusAppointment",
+JSON.stringify(appointment)
+);
+
+
+/* Create WhatsApp message */
+
+const message =
+"Hello Care Plus Clinic,%0A%0A" +
+
+"New Appointment Request:%0A" +
+
+"Name: " + encodeURIComponent(name) + "%0A" +
+
+"Mobile: " + encodeURIComponent(mobile) + "%0A" +
+
+"Email: " + encodeURIComponent(email) + "%0A" +
+
+"Date: " + encodeURIComponent(date) + "%0A" +
+
+"Department: " + encodeURIComponent(department) + "%0A" +
+
+"Problem: " + encodeURIComponent(problem);
+
+
+/*
+CHANGE THIS NUMBER
+TO THE REAL CLINIC WHATSAPP NUMBER
+*/
+
+document.getElementById(
+"appointmentWhatsApp"
+).href =
+"https://wa.me/919999999999?text=" + message;
+
+
+document.getElementById(
+"confirmation"
+).style.display = "block";
+
+
+document.getElementById(
+"confirmation"
+).scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+
+/* AI ASSISTANT */
+
+function toggleChat(){
+
+const chat =
+document.getElementById("chatbox");
+
+if(chat.style.display === "block"){
+
+chat.style.display = "none";
+
+}else{
+
+chat.style.display = "block";
+
+}
+
+}
+
+
+function quickMessage(text){
+
+document.getElementById(
+"chatInput"
+).value = text;
+
+sendMessage();
+
+}
+
+
+function addMessage(text,type){
+
+const messages =
+document.getElementById("chatMessages");
+
+const div =
+document.createElement("div");
+
+div.className =
+"message " + type;
+
+div.innerHTML = text;
+
+messages.appendChild(div);
+
+messages.scrollTop =
+messages.scrollHeight;
+
+}
+
+
+function sendMessage(){
+
+const input =
+document.getElementById("chatInput");
+
+const text =
+input.value.trim();
+
+if(!text) return;
+
+
+addMessage(text,"user");
+
+input.value = "";
+
+
+setTimeout(function(){
+
+let reply =
+"Thanks for your message. Please contact our clinic team for further assistance.";
+
+
+const q =
+text.toLowerCase();
+
+
+if(
+q.includes("service") ||
+q.includes("treatment")
+){
+
+reply =
+"We provide General Physician consultation, Child Specialist care, Blood Tests and Emergency Care.";
+
+}
+
+
+else if(
+q.includes("appointment") ||
+q.includes("book")
+){
+
+reply =
+"You can book an appointment by using our Appointment form. Please provide your name, mobile number, preferred date and department.";
+
+}
+
+
+else if(
+q.includes("contact") ||
+q.includes("phone") ||
+q.includes("call")
+){
+
+reply =
+"You can contact Care Plus Clinic at +91 9999999999 or use the WhatsApp button.";
+
+}
+
+
+else if(
+q.includes("doctor") ||
+q.includes("doctors")
+){
+
+reply =
+"Our demo includes General Physician, Gynecologist and Child Specialist doctors.";
+
+}
+
+
+else if(
+q.includes("hello") ||
+q.includes("hi")
+){
+
+reply =
+"Hello! 👋 Welcome to Care Plus Clinic. I can help you with services, doctors, appointments and contact information.";
+
+}
+
+
+addMessage(reply,"bot");
+
+},600);
+
+}
+
+</script>
+
+
 </body>
-</html>
+
+                   </html>
